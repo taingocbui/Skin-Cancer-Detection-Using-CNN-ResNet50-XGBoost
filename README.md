@@ -1,68 +1,31 @@
 # Collaborative Filtering Recommendation System
 
 Author: Tai Ngoc Bui <br>
-Date Completion: November 10th, 2024
+Date Completion: December 7th, 2024
 
 ## 1.Business Understanding
-This project focuses on developing a robust recommendation system based on the MovieLens dataset to provide top 5 movie recommendations to a user, based on their ratings of other movie. This dataset, from the GroupLens research lab at the University of Minnesota, contains tens of millions of movie rankings (a combination of a movie ID, a user ID, and a numeric rating), although the dataset used in this project only contains 100,000 of them.
+This project focuses on developing a robust Convolutional Neural Network (CNN) capable of classifying skin lesions as malignant or benign. Skin cancer is one of the most prevalent cancers worldwide, and early detection significantly improves treatment outcomes and survival rates. Despite advancements in medical technology, many cases are either detected too late or misdiagnosed due to the limitations of traditional diagnostic methods. By leveraging deep learning techniques, I aim to provide a reliable, efficient, and scalable solution to assist dermatologists and healthcare professionals in diagnosing skin cancer.
 
-This model will use root mean squared error (RMSE) as the main metric to ensure the accuracy of our prediction. This is perhaps the most popular metric of evaluation for recommender system. RMSE is a metric which measure how much the signal and the noise is explained by the model. It penalises way less when close to actual prediction and way more when far from actual prediction compared to Mean Absolute Error metric, another popular metric of evaluation.
+This topic is personally significant as it combines two areas of great interest: leveraging artificial intelligence to solve real-world problems and contributing to public health initiatives. On a broader level, this research has societal implications, potentially saving lives and reducing healthcare costs. The target audience for this project includes not only potential patients of skin cancer but also dermatologists and oncologists seeking diagnostic support tools, as well as the whole healthcare system. To successfully complete this project, I relied on numerous studies and projects highlighting the performance of CNNs like ResNet, InceptionNet and MobileNet for skin cancer detection. Moreover, studies on transfer learning to improve model performance with limited datasets are also utilized in this project.
+
+This model will use recall rate as the main metric to prioritize the ability of the model to correctly identify all positive cases (e.g. malignant cancer). In medical diagnoses, a false negative (failing to detect cancer when it is present) can have severe consequences, such as delayed treatment or worsened prognosis. Recall ensures that the model minimizes false negatives, even if it occasionally produces false positives. Missing a malignant case is riskier than flagging a benign case as malignant, as false positives can often be corrected through follow-up procedures.
+
 
 ## 2.Data Understanding
-This dataset (ml-latest-small) describes 5-star rating and free-text tagging activity from [MovieLens dataset](https://grouplens.org/datasets/movielens/latest/), a movie recommendation service. It contains 100836 ratings and 3683 tag applications across 9742 movies. These data were created by 610 users between March 29, 1996 and September 24, 2018. This dataset was generated on September 26, 2018.
-
-All selected users had rated at least 20 movies. No demographic information is included. Each user is represented by an id, and no other information is provided. The data are contained in the files links.csv, movies.csv, ratings.csv and tags.csv.
-
-The dataset files are written as comma-separated values files with a single header row. Columns that contain commas (,) are escaped using double-quotes (").
-
-#### a. User Ids
-MovieLens users were selected at random for inclusion. Their ids have been anonymized. User ids are consistent between ratings.csv and tags.csv (i.e., the same id refers to the same user across the two files).
-
-#### b .Movie Ids
-Only movies with at least one rating or tag are included in the dataset. These movie ids are consistent with those used on the MovieLens web site (e.g., id 1 corresponds to the URL https://movielens.org/movies/1). Movie ids are consistent between ratings.csv, tags.csv, movies.csv, and links.csv (i.e., the same id refers to the same movie across these four data files).
-
-#### c .Ratings Data File Structure (ratings.csv)
-All ratings are contained in the file ratings.csv. Each line of this file after the header row represents one rating of one movie by one user, and has the following format: userId, movieId, rating, timestamp
-
-The lines within this file are ordered first by userId, then, within user, by movieId.
-Ratings are made on a 5-star scale, with half-star increments (0.5 stars - 5.0 stars).
-Timestamps represent seconds since midnight Coordinated Universal Time (UTC) of January 1, 1970.
-
-#### d. Tags Data File Structure (tags.csv)
-All tags are contained in the file tags.csv. Each line of this file after the header row represents one tag applied to one movie by one user, and has the following format: userId, movieId, tag, timestamp
-
-The lines within this file are ordered first by userId, then, within user, by movieId.
-
-Tags are user-generated metadata about movies. Each tag is typically a single word or short phrase. The meaning, value, and purpose of a particular tag is determined by each user.
-
-Timestamps represent seconds since midnight Coordinated Universal Time (UTC) of January 1, 1970.
-
-#### e. Movies Data File Structure (movies.csv)
-Movie information is contained in the file movies.csv. Each line of this file after the header row represents one movie, and has the following format: movieId, title, genres
-
-Movie titles are entered manually or imported from https://www.themoviedb.org/, and include the year of release in parentheses. Errors and inconsistencies may exist in these titles.
-
-Genres are a pipe-separated list, and are selected from the following: Action, Adventure, Animation, Children's, Comedy, Crime, Documentary, Drama, Fantasy, Film-Noir, Horror, Musical, Mystery, Romance, Sci-Fi, Thriller, War, Western, (no genres listed)
-
-#### f. Links Data File Structure (links.csv)
-Identifiers that can be used to link to other sources of movie data are contained in the file links.csv. Each line of this file after the header row represents one movie, and has the following format: movieId, imdbId, tmdbId
-
-- movieId is an identifier for movies used by https://movielens.org. E.g., the movie Toy Story has the link https://movielens.org/movies/1.
-- imdbId is an identifier for movies used by http://www.imdb.com. E.g., the movie Toy Story has the link http://www.imdb.com/title/tt0114709/.
-- tmdbId is an identifier for movies used by https://www.themoviedb.org. E.g., the movie Toy Story has the link https://www.themoviedb.org/movie/862.
-
-Use of the resources listed above is subject to the terms of each provider.
+The dataset used in this project is sourced from Kaggle’s [Skin Cancer: Malignant vs. Benign](https://www.kaggle.com/datasets/fanconic/skin-cancer-malignant-vs-benign). It consists of two folders: train and test with images (224x244) of the two types of moles including benign skin moles and malignant skin moles. It is curated for machine learning research and adheres to ethical standards for data use. The primary features include images of skin lesions data and categorical labels indicating whether the lesion is benign or malignant. Several researchers have used this dataset to train and evaluate machine learning models for skin cancer detection. 
 
 ## 3. Objectives
+Develop a robust Convolutional Neural Network (CNN) capable of classifying skin lesions as malignant or benign using skin images. This classifying model should achieve a recall rate at least 80% to correctly identify all positive cases.
 
-Develop a Collborative Filtering recommendation system to provides top 5 movie recommendations to a user, based on their ratings of other movies. This recommendation system should be scalable and achieve an acceptable low root mean squared error metric.
+## 4. Exploratory Analysis
+The data is stored as jpg image files and already separated into train and test folder. Each image (224x244) represents a skin lesion and is a collection of pixel values, typically stored as arrays of integers ranging from 0 to 255 (grayscale) or three-channel RGB values. The labels are categorical, indicating whether the lesion is benign (label 0) or malignant (label 1). 
+![Train Samples](https://github.com/taingocbui/phase5_project/blob/main/photos/Train_samples.png)
+![Test Samples](https://github.com/taingocbui/phase5_project/blob/main/photos/Test_samples.png)
 
-## 4. Collaborative Filtering
 
-Two most ubiquitous types of personalized recommendation systems are Content-Based and Collaborative Filtering. The Collaborative Filtering Recommender is entirely based on the past behavior and not on the context. More specifically, it is based on the similarity in preferences, tastes and choices of two users. It analyses how similar the tastes of one user is to another and makes recommendations on the basis of that. In contrast, content-based recommendation systems focus on the attributes of the items and give you recommendations based on the similarity between them.
 
-As the number of users are much smaller compared the number of movies in this particular project, I will use Collaborative Filtering as the main approach for this Recommender System. In general, collaborative filtering is the workhorse of recommender engines. It can be divided into Memory-Based Collaborative Filtering and Model-Based Collaborative filtering.
-![Collaborative Filtering](https://github.com/taingocbui/phase4_project/blob/main/photos/item_user_based.png)
+
+
 
 ### a. Base Model (KNNBasic)
 To start with, I use KNNBasic as the baseline model with both cosine and pearson similarity function. It is easy to understand and implement. It uses the k-nearest neighbors approach to find similar users or items based on interaction data. Both model had RMSE of about 0.97, meaning that it was off by almost 1 point for each guess it made for ratings.
