@@ -81,4 +81,3 @@ To better improve the quality of this project, I will extend this project by inv
    * [RestNet_model_best_weights.h5](./models/RestNet_model_best_weights.h5)
  * [project5.ipynb](./project5.ipynb)
  * [README.md](./README.md)
- * [dir3](./dir3)
