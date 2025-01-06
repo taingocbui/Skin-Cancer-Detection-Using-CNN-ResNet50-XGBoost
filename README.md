@@ -60,27 +60,30 @@ Based on our analysis and testing with different models, I want to recommend a h
 To better improve the quality of this project, I will extend this project by investigate other popular models used in medical detection field such as VGG16, InceptionV3 or MobileNetV3. Moreover, a hybridd between these new models may potentially improve the recall rate for this skin cancer detection problem.
 
 
-$ home
+$ ./tree-md .
+## Project tree
+
 .
-├── data
-│   ├── test
-│   │   ├── malignant
-│   │   └── benign
-│   └── train
-│       ├── malignant
-│       └── benign
-├── photos
-│   ├── Test_samples.png
-│   ├── Train_samples.png
-│   ├── CM_base.png
-│   ├── Validation_Loss_base.png
-│   ├── CM_RN50.png
-│   ├── Validation_Loss_RN50.png
-│   └── CM_hybrid.png
-├── models
-│   ├── cnn_model_best.weights.h5
-│   ├── hybrid_xgboost_model.pkl
-│   └── RestNet_model_best_weights.h5
-├── presentation.ppt
-├── project5.ipynb
-└── README.md
+ * [tree-md](./tree-md)
+ * [data](./data)
+   * [train](./data/train)
+       * [malignant](./data/train/malignant)
+       * [benign](./data/train/benign)
+   * [test](./data/test)
+       * [malignant](./data/test/malignant)
+       * [benign](./data/test/benign) 
+ * [photos](./photos)
+   * [Test_samples.png](./photos/Test_samples.png)
+   * [Train_samples.png](./photos/Train_samples.png)
+   * [CM_base.png](./photos/CM_base.png)
+   * [Validation_Loss_base.png](./photos/Validation_Loss_base.png)
+   * [CM_RN50.png](./photos/CM_RN50.png)   
+   * [Validation_Loss_RN50.png](./photos/Validation_Loss_RN50.png)   
+   * [CM_hybrid.png](./photos/CM_hybrid.png)
+ * [models](./models)
+   * [cnn_model_best.weights.h5](./models/cnn_model_best.weights.h5)
+   * [hybrid_xgboost_model.pkl](./models/hybrid_xgboost_model.pkl)
+   * [RestNet_model_best_weights.h5](./models/RestNet_model_best_weights.h5)
+ * [project5.ipynb](./project5.ipynb)
+ * [README.md](./README.md)
+ * [dir3](./dir3)
