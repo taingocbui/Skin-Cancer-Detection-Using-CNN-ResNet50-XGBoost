@@ -59,12 +59,7 @@ Based on our analysis and testing with different models, I want to recommend a h
 ## 6. Future Works
 To better improve the quality of this project, I will extend this project by investigate other popular models used in medical detection field such as VGG16, InceptionV3 or MobileNetV3. Moreover, a hybridd between these new models may potentially improve the recall rate for this skin cancer detection problem.
 
-
-$ ./tree-md .
 ## Project tree
-
-.
- * [tree-md](./tree-md)
  * [data](./data)
    * [train](./data/train)
        * [malignant](./data/train/malignant)
