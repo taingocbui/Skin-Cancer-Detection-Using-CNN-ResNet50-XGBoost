@@ -60,13 +60,7 @@ Based on our analysis and testing with different models, I want to recommend a h
 To better improve the quality of this project, I will extend this project by investigate other popular models used in medical detection field such as VGG16, InceptionV3 or MobileNetV3. Moreover, a hybridd between these new models may potentially improve the recall rate for this skin cancer detection problem.
 
 ## Project tree
- * [data](./data)
-   * [train](./data/train)
-       * [malignant](./data/train/malignant)
-       * [benign](./data/train/benign)
-   * [test](./data/test)
-       * [malignant](./data/test/malignant)
-       * [benign](./data/test/benign) 
+
  * [photos](./photos)
    * [Test_samples.png](./photos/Test_samples.png)
    * [Train_samples.png](./photos/Train_samples.png)
