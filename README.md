@@ -70,8 +70,6 @@ To better improve the quality of this project, I will extend this project by inv
    * [Validation_Loss_RN50.png](./photos/Validation_Loss_RN50.png)   
    * [CM_hybrid.png](./photos/CM_hybrid.png)
  * [models](./models)
-   * [cnn_model_best.weights.h5](./models/cnn_model_best.weights.h5)
    * [hybrid_xgboost_model.pkl](./models/hybrid_xgboost_model.pkl)
-   * [RestNet_model_best_weights.h5](./models/RestNet_model_best_weights.h5)
  * [project5.ipynb](./project5.ipynb)
  * [README.md](./README.md)
