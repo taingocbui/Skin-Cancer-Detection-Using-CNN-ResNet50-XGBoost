@@ -59,6 +59,19 @@ Based on our analysis and testing with different models, I want to recommend a h
 ## 6. Future Works
 To better improve the quality of this project, I will extend this project by investigate other popular models used in medical detection field such as VGG16, InceptionV3 or MobileNetV3. Moreover, a hybridd between these new models may potentially improve the recall rate for this skin cancer detection problem.
 
+## 7. References
+freeCodeCamp. (2020, June 18). *Keras with TensorFlow Course - Python Deep Learning and Neural Networks for Beginners Tutorial* [Video]. YouTube. https://www.youtube.com/watch?v=qFJeN9V1ZsI&t=401s 
+
+Wu, J. (2017, May 1). *Introduction to convolution neural networks*. Retrieved from https://cs.nju.edu.cn/wujx/paper/CNN.pdf
+
+Cortés Aguas, K. (2020, July 3). *A guide to transfer learning with Keras using ResNet50*. Medium. Retrieved from https://medium.com/%40kenneth.ca95/a-guide-to-transfer-learning-with-keras-using-resnet50-a81a4a28084b
+
+
+Hebbar, H. (2021, June 29). *Transfer Learning Using Keras(ResNet-50)| Complete Python Tutorial|* [Video]. Youtube. https://www.youtube.com/watch?v=JcU72smpLJk
+
+Azpur, J. (2021, June 12). *Deep XGBoost Image Classifier*. GitHub. https://github.com/jonaac/deep-xgboost-image-classifier?utm_source=chatgpt.com
+
+
 ## Project tree
 
  * [photos](./photos)
